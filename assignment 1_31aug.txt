@@ -1,0 +1,84 @@
+code for armstrong number:-
+
+   int main() 
+  {
+     int t,n,r,c,result=0;
+     printf("enter any number to check");
+     scanf("%d",&n);
+  t=n;
+  while(n>0)
+  {
+  r=n%10;
+  c=r*r*r;
+  result=result+c;
+  n=n/10;
+    }
+     if(t==result)
+        printf("given number is armstrong");
+     else
+        printf("given number is not armstrong");
+   return 0;
+  }
+
+
+
+
+
+code for reverse number:-
+
+int main() 
+  {
+     int n,r,result=0;
+     printf("enter any number to reverse");
+     scanf("%d",&n);
+  while(n>0)
+  {
+  r=n%10;
+  result=result*10+r;
+  n=n/10;
+    }
+     printf("reverse of give number is :- %d",result);
+   return 0;
+  }
+
+
+
+
+code to find 3rd highest value from array:-
+
+
+  int main()
+  {
+    int n,first,scnd,thrd,i;
+    int a[30];
+    printf("no of elements in the array \n");
+    scanf("%d",&n);
+    printf("enter the array elements\n");
+     for(i=0;i<n;i++)
+     {
+        scanf("%d",&a[i]);
+     }
+
+      first = a[0];
+      scnd = a[0];
+      thrd= a[0];
+
+      for(i=1;i<n;i++)
+     {
+       if (first < a[i]){
+       thrd = scnd;
+       scnd = first;
+       first = a[i];
+      }
+      else if (scnd < a[i]){
+              thrd = scnd;
+              scnd = a[i];
+            }
+      else if (thrd < a[i]){
+              thrd = a[i];
+     }
+   }
+
+          printf("the third largest is %d",thrd);
+          return 0;
+}
