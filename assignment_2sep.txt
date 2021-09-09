@@ -1,0 +1,102 @@
+1. Create an array with five scores out of 100, compute the average of the scores and compute percentage.
+
+import java.util.Scanner;
+public class Score
+{
+   public static void main(String args[])
+   {
+     int markArray[] = new int[5];
+     int i;
+ 	float sum=0;
+ 	float average, percentage;
+ 	Scanner scan = new Scanner(System.in);
+ 	System.out.print("Enter marks for 5 Subjects : ");
+           for(i=0; i<5; i++){
+ 		markArray[i] = scan.nextInt();
+ 		sum = sum + markArray[i];
+              }
+          average = sum/5;
+ 	  percentage = (sum/500) * 100;
+  	  System.out.print("Average Marks = " +average);
+         System.out.print("\nPercentage = " +percentage+ "%");
+   }
+}
+
+
+
+2. Create two 3 X 3 matrices and perform multiplication of matrices.
+
+  public class Matrix{
+    public static void main(String args[]){
+	int a[][]={{2,2,2},{2,2,2},{2,2,2}}; 
+	int b[][]={{3,3,3},{3,3,3},{3,3,3}}; 
+	int c[][]=new int[3][3]; 
+	for(int i=0;i<3;i++){ 
+	for(int j=0;j<3;j++){ 
+	c[i][j]=0; 
+	for(int k=0;k<3;k++) 
+	{ 
+	    c[i][j]+=a[i][k]*b[k][j]; 
+        }
+	System.out.print(c[i][j]+" ");
+      }
+	System.out.println();
+     } 
+   }
+}
+
+
+3.) Create a variable of type String with following data,
+ String data="Java is Object oriented. Java is platform independent.Java is simple."
+Search for word "Java" and count number of occurrences.
+ 
+import java.io.*;
+  public static void main(String args[]) 
+  {
+ 	String data = "Java is Object oriented. Java is platform independent.Java is simple.";
+ 	String word = "Java";
+ 	System.out.println(countOccurrences(data, word));
+	}
+ 
+   Public class String{
+ 	static int countOccurrences(String data, String word) 
+	{
+	 String a[] = data.split(" ");
+ 	 int count = 0;
+ 	 for (int i = 0; i < a.length; i++) 
+ 	{
+ 	  if (word.equals(a[i]))
+ 		count++;
+ 	} 
+      return count;
+     }
+ }
+ 
+ 
+
+4. Create an array of type int with 10 elements.
+  int array[]={8,2,3,1,6,5,7};
+Sort the array in descending order.
+
+void main ()  
+{  
+    int i, j,temp;   
+    int array[7]={8,2,3,1,6,5,7};  
+    for(i = 0; i<10; i++)  
+    {  
+        for(j = i+1; j<10; j++)  
+        {  
+            if(a[j] > a[i])  
+            {  
+                temp = a[i];  
+                a[i] = a[j];  
+                a[j] = temp;   
+            }   
+        }   
+    }   
+    printf("Printing Sorted Element List ...\n");  
+    for(i = 0; i<10; i++)  
+    {  
+        printf("%d\n",a[i]);  
+    }  
+}  
