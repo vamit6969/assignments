@@ -1,0 +1,198 @@
+
+1. Replace a character a with e in following string without using inbuilt method.
+
+  Halo
+---->
+
+	public class ReplaceChar {
+	public static void main(String[] args) {
+		
+		 String s1 = "Hallo";
+		 char old='a';
+		 char new='e';
+		 StringBuilder builder = new StringBuilder();
+	     System.out.println("The given string is: "+s1);    
+	       
+	        for(int i=0;i<s1.length();i++)
+	        {
+	            char ch = s.charAt(i);
+	            if(ch==old)
+	            {
+	                builder.append(new);
+	            }
+	            else if(ch==Character.toUpperCase(old)){
+	                builder.append(Character.toUpperCase(new));
+	            }
+	            else if(i==3){
+	                builder.append(Character.toUpperCase(ch));
+	            }
+	            else{
+	                builder.append(ch);
+	            }
+	        }
+	        System.out.println("Modified string is :" +builder.toString());
+	    }
+
+
+
+		    
+}
+
+
+
+2. Check if given string starts with A and Endwith t.
+
+--->
+
+import java.util.Scanner;
+public class StringStartAndEndWith {
+
+	public static void main(String[] args) {
+		
+		 Scanner sc = new Scanner(System.in);
+	     System.out.println("Enter any string : ");
+	     String s = sc.nextLine();
+		if((s.startsWith("A") || s.startsWith("a")) && (s.endsWith("T") || s.endsWith("t")))
+		{
+			System.out.println("The String starts with A and ends with T");
+		}
+		else
+		{
+			System.out.println("The String dosent starts with A and end with T");
+		}
+	}
+}
+
+3. Write a code to mask a given string.
+
+--->
+
+public class MaskString {
+
+	public static void main(String[] args) throws Exception{
+		 String s1 = "AMIT VERMA";
+		 String[] ary = str.split(" ");
+		 String newString = "";
+		 int l=array.length;
+		 
+		 for(int i=0;i<l;i++) 
+		 {
+			 for(int j=0;j<ary[i].length();j++)
+			 {
+				if(j>1) 
+				{
+					newString=newString+"X";
+				}
+				else
+				{
+					char s=ary[i].charAt(j);
+					newString=newString+s;
+				}
+				
+		 }
+			 newString=newString+" ";
+		 }
+		 	 System.out.println("Original String is:\t"+s1);
+			 System.out.println("Masked String is\t"+newString);
+		 
+	}
+	
+	}
+
+
+
+4. Create a class Student with following attributes
+   
+   Student
+ =============
+   rollNo int
+   studentFirstName String
+   studentLastName  String
+   studentAge int
+ 
+ Override toString(),equals(),hashCode() without using tool.
+ 
+
+--->
+
+public class StudentInfo {
+
+		 private int rollNo;
+		 private String studentFirstName;
+		 private String studentLastName;
+		 private int age;
+
+		 public StudentInfo(int rollNo, String studentFirstName, String studentLastName, int age) {
+		        this.rollNo = rollNo;
+		        this.studentFirstName = studentFirstName;
+		        this.studentLastName = studentLastName;
+		        this.age = age;
+		  }
+
+		    @Override
+		    public String toString() {
+		        StringBuilder builder = new StringBuilder();
+		        builder.append("[").append(rollNo + ",").append(studentFirstName).append(" ").append(studentLastName)
+		                .append(","+age + "").append("]");
+
+		        return builder.toString();
+		    }
+		    
+		    @Override
+		    public boolean equals(Object obj) 
+		    {
+		        if(obj != null && obj instanceof StudentInfo )
+		        {
+		            StudentInfo student = (StudentInfo)obj;
+		            if (age != student.age)
+		                return false;
+		            if (rollNo != student.rollNo)
+		                return false;
+		            if (studentFirstName == null) {
+		                if (student.studentFirstName != null)
+		                    return false;
+		            } else if (!studentFirstName.equals(student.studentFirstName))
+		                return false;
+		            if (studentLastName == null) {
+		                if (student.studentLastName != null)
+		                    return false;
+		            } else if (!studentLastName.equals(student.studentLastName))
+		                return false;
+		            return true;
+		        }
+		        else{
+		            return false;
+		        }
+		        
+		    }
+
+		    @Override
+		    public int hashCode() {
+		        return rollNo
+		        ^studentFirstName.hashCode()
+		        ^studentLastName.hashCode()
+		        ^age;
+		    }
+		    public static void main(String[] args) 
+		    {
+		        StudentInfo s1 = new  StudentInfo(22222, "Amit", "Verma", 24);
+		        StudentInfo s2 = new  StudentInfo(44444, "Amit", "Verma", 25);
+		        StudentInfo s3 = new  StudentInfo(33333, "Amit", "Verma", 26);
+		        StudentInfo s4 = new  StudentInfo(11111, "Amit", "Verma", 24);
+
+		        System.out.println("Student 1 : "+s1);
+		        System.out.println("Student 2 : "+s2);
+		        System.out.println("Student 3 : "+s3);
+		        System.out.println("Student 4 : "+s4);
+		        
+		        System.out.println("S1 equal S2 : "+s1.equals(s2));
+		        System.out.println("S1 equal S3 : "+s1.equals(s3));
+		        System.out.println("S3 equal S4 : "+s3.equals(s4));
+
+		        System.out.println("S1 hashcode : "+s1.hashCode());
+		        System.out.println("S2 hashcode : "+s2.hashCode());
+		        System.out.println("S3 hashcode : "+s3.hashCode());
+		        System.out.println("S4 hashcode : "+s4.hashCode());
+	}
+
+		    }
